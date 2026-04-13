@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #faf9f7;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+/* ── Navbar ─────────────────────────────────────────────────────────────────── */
+.navbar {
+  background: #1a0a00;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+.navbar-brand span { color: #e07b3a; }
+.nav-links { display: flex; align-items: center; gap: 8px; }
+.nav-link {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.nav-link:hover, .nav-link.active { color: #fff; background: rgba(255,255,255,0.1); }
+.nav-btn {
+  background: #e07b3a;
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.15s;
+}
+.nav-btn:hover { background: #c5662a; }
+.user-badge {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-right: 8px;
+}
+
+/* ── Page layout ─────────────────────────────────────────────────────────────── */
+.page { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+.page-sub { font-size: 15px; color: #6b6b6b; margin-bottom: 32px; }
+
+/* ── Cards ───────────────────────────────────────────────────────────────────── */
+.card {
+  background: #fff;
+  border: 1px solid #e8e4df;
+  border-radius: 14px;
+  padding: 24px;
+}
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+
+/* ── Forms ───────────────────────────────────────────────────────────────────── */
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.form-label { font-size: 13px; font-weight: 500; color: #444; }
+.form-input, .form-select, .form-textarea {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  background: #fff;
+  color: #1a1a1a;
+  transition: border 0.15s;
+  outline: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: #e07b3a; }
+.form-textarea { resize: vertical; min-height: 80px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ── Buttons ──────────────────────────────────────────────────────────────────── */
+.btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-primary { background: #e07b3a; color: #fff; }
+.btn-primary:hover { background: #c5662a; }
+.btn-secondary { background: #f0ece8; color: #444; }
+.btn-secondary:hover { background: #e5dfd8; }
+.btn-danger { background: #fee2e2; color: #991b1b; }
+.btn-danger:hover { background: #fecaca; }
+.btn-success { background: #dcfce7; color: #166534; }
+.btn-success:hover { background: #bbf7d0; }
+.btn-sm { padding: 6px 14px; font-size: 12px; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Status badges ────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge-pending   { background: #fef9c3; color: #854d0e; }
+.badge-confirmed { background: #dcfce7; color: #166534; }
+.badge-cancelled { background: #fee2e2; color: #991b1b; }
+.badge-completed { background: #dbeafe; color: #1e40af; }
+.badge-available  { background: #dcfce7; color: #166534; }
+.badge-occupied   { background: #fee2e2; color: #991b1b; }
+.badge-maintenance{ background: #fef9c3; color: #854d0e; }
+
+/* ── Table ────────────────────────────────────────────────────────────────────── */
+.table-wrapper { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  border-bottom: 1px solid #e8e4df;
+}
+td { padding: 12px 14px; border-bottom: 1px solid #f0ece8; vertical-align: middle; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #faf9f7; }
+
+/* ── Auth page ────────────────────────────────────────────────────────────────── */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a0a00 0%, #3d1500 100%);
+  padding: 24px;
+}
+.auth-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+}
+.auth-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+.auth-logo span { color: #e07b3a; }
+.auth-subtitle { text-align: center; font-size: 13px; color: #888; margin-bottom: 28px; }
+.auth-switch { text-align: center; margin-top: 18px; font-size: 13px; color: #888; }
+.auth-switch a { color: #e07b3a; text-decoration: none; font-weight: 500; }
+
+/* ── Hero ─────────────────────────────────────────────────────────────────────── */
+.hero-section {
+  background: linear-gradient(135deg, #1a0a00 0%, #3d1500 100%);
+  color: #fff;
+  padding: 80px 24px;
+  text-align: center;
+}
+.hero-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+.hero-section h1 span { color: #e07b3a; }
+.hero-section p { font-size: 17px; color: rgba(255,255,255,0.7); max-width: 520px; margin: 0 auto 32px; }
+
+/* ── Misc ─────────────────────────────────────────────────────────────────────── */
+.empty-state { text-align: center; padding: 60px 24px; color: #aaa; font-size: 15px; }
+.loading { text-align: center; padding: 60px; color: #aaa; }
+.error-msg { background: #fee2e2; color: #991b1b; padding: 10px 14px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; }
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
